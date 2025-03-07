@@ -17,8 +17,7 @@ describe('Doctors page', () => {
     // click on add new doctor button - locate it by a unique identifier first
     // check that a modal window is displayed
 
-    const myButton = await $('[routerlink="/doctors"]');
-    await myButton.click();
+    await dashboardPage.sideMenu.item('doctors').click();
 
     await $('.specialization-types button.e-control').click();
 
@@ -36,7 +35,7 @@ describe('Doctors page', () => {
     // verify that modal window dissapears
     // verify that new doctor is added to the list
 
-    await $('[routerlink="/doctors"]').click();
+    await dashboardPage.sideMenu.item('doctors').click();
 
     await $('.specialization-types button.e-control').click();
 
@@ -57,7 +56,7 @@ describe('Doctors page', () => {
   });
 
   it('Closes the modal window', async () => {
-    await $('[routerlink="/doctors"]').click();
+    await dashboardPage.sideMenu.item('doctors').click();
 
     await $('.specialization-types button.e-control').click();
 
