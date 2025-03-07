@@ -4,11 +4,8 @@ describe('Doctors page', () => {
   });
 
   it('Check page title', async () => {
-    const title = await browser.getTitle();
-    console.log(title);
-
-    if (title !== 'Appointment Planner - Syncfusion Angular Components Showcase App') {
-      throw new Error('Page title is not correct');
-    }
+    // const title = await browser.getTitle();
+    // console.log(title);
+    await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App');
   });
 });
