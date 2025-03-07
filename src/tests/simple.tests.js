@@ -3,13 +3,13 @@ describe('Doctors page', () => {
     await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
   });
 
-  it.skip('Check page title', async () => {
+  it('Check page title', async () => {
     // const title = await browser.getTitle();
     // console.log(title);
     await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App');
   });
 
-  it.skip('Open modal for adding a new doctor', async () => {
+  it('Open modal for adding a new doctor', async () => {
     // click on doctors item in the side menu
     // click on add new doctor button - locate it by a unique identifier first
     // check that a modal window is displayed
@@ -22,7 +22,7 @@ describe('Doctors page', () => {
     await expect($('.new-doctor-dialog .e-dlg-modal')).toBeDisplayed();
   });
 
-  it.skip('Add new doctor', async () => {
+  it('Add new doctor', async () => {
     // clcik on doctors menu item
     // click on add new doctor btn
     // wait for visibility of modal window
