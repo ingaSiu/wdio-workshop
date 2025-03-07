@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run src/config/wdio.conf.js"
   },
   "devDependencies": {
     "@wdio/cli": "^9.11.0",
