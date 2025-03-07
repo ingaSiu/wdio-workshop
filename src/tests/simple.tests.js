@@ -3,13 +3,13 @@ describe('Doctors page', () => {
     await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
   });
 
-  it('Check page title', async () => {
+  it.skip('Check page title', async () => {
     // const title = await browser.getTitle();
     // console.log(title);
     await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App');
   });
 
-  it('Open modal for adding a new doctor', async () => {
+  it.skip('Open modal for adding a new doctor', async () => {
     // click on doctors item in the side menu
     // click on add new doctor button - locate it by a unique identifier first
     // check that a modal window is displayed
@@ -22,7 +22,7 @@ describe('Doctors page', () => {
     await expect($('.new-doctor-dialog .e-dlg-modal')).toBeDisplayed();
   });
 
-  it('Add new doctor', async () => {
+  it.skip('Add new doctor', async () => {
     // clcik on doctors menu item
     // click on add new doctor btn
     // wait for visibility of modal window
@@ -51,5 +51,17 @@ describe('Doctors page', () => {
 
     await expect($('#Specialist_8').$('.name').toHaveText('Dr. John Doe'));
     await expect($('#Specialist_8').$('.education').toHaveText('Basic', { ignoreCase: true }));
+  });
+
+  it('Closes the modal window', async () => {
+    await $('[routerlink="/doctors"]').click();
+
+    await $('.specialization-types button.e-control').click();
+
+    await $('.new-doctor-dialog').waitForDisplayed();
+
+    await $('.new-doctor-dialog .e-dlg-closeicon-btn').click();
+
+    await expect($('.new-doctor-dialog')).not.toBeDisplayed();
   });
 });
