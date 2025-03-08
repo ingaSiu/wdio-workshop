@@ -1,5 +1,8 @@
 const DashboardPage = require('./../po/pages/dashboard.page');
+const DoctorsPage = require('./../po/pages/doctors.page');
+
 const dashboardPage = new DashboardPage();
+const doctorsPage = new DoctorsPage();
 
 describe('Doctors page', () => {
   beforeEach(async () => {
@@ -19,7 +22,7 @@ describe('Doctors page', () => {
 
     await dashboardPage.sideMenu.item('doctors').click();
 
-    await $('.specialization-types button.e-control').click();
+    await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
     await expect($('.new-doctor-dialog .e-dlg-modal')).toBeDisplayed();
   });
@@ -37,7 +40,7 @@ describe('Doctors page', () => {
 
     await dashboardPage.sideMenu.item('doctors').click();
 
-    await $('.specialization-types button.e-control').click();
+    await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
     await $('.new-doctor-dialog .e-dlg-modal').waitForDisplayed();
 
@@ -58,7 +61,7 @@ describe('Doctors page', () => {
   it('Closes the modal window', async () => {
     await dashboardPage.sideMenu.item('doctors').click();
 
-    await $('.specialization-types button.e-control').click();
+    await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
     await $('.new-doctor-dialog').waitForDisplayed();
 
