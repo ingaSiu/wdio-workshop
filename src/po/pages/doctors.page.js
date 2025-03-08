@@ -1,8 +1,10 @@
+const AddDoctorComponent = require('../components/doctors/add-doctor.component');
 const ListHeaderComponent = require('../components/doctors/list-header.component');
 
 class DoctorsPage {
   constructor() {
     this.doctorListHeader = new ListHeaderComponent();
+    this.addDoctorModal = new AddDoctorComponent();
   }
 
   async open() {
