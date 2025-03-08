@@ -24,7 +24,7 @@ describe('Doctors page', () => {
 
     await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
-    await expect($('.new-doctor-dialog .e-dlg-modal')).toBeDisplayed();
+    await expect(doctorsPage.addDoctorModal.rootEl).toBeDisplayed();
   });
 
   it('Add new doctor', async () => {
@@ -42,7 +42,7 @@ describe('Doctors page', () => {
 
     await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
-    await $('.new-doctor-dialog .e-dlg-modal').waitForDisplayed();
+    await doctorsPage.addDoctorModal.rootEl.waitForDisplayed();
 
     await $('[name="Name"]').setValue('John Doe');
     await $('#DoctorMobile').setValue('1234567890');
@@ -52,7 +52,7 @@ describe('Doctors page', () => {
 
     await $('.e-footer-content button.e-primary').click();
 
-    await expect($('.new-doctor-dialog .e-dlg-modal')).not.toBeDisplayed();
+    await expect(doctorsPage.addDoctorModal.rootEl).not.toBeDisplayed();
 
     await expect($('#Specialist_8').$('.name').toHaveText('Dr. John Doe'));
     await expect($('#Specialist_8').$('.education').toHaveText('Basic', { ignoreCase: true }));
@@ -63,10 +63,10 @@ describe('Doctors page', () => {
 
     await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
 
-    await $('.new-doctor-dialog').waitForDisplayed();
+    await doctorsPage.addDoctorModal.rootEl.waitForDisplayed();
 
     await $('.new-doctor-dialog .e-dlg-closeicon-btn').click();
 
-    await expect($('.new-doctor-dialog')).not.toBeDisplayed();
+    await expect(doctorsPage.addDoctorModal.rootEl).not.toBeDisplayed();
   });
 });
