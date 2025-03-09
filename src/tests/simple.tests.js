@@ -50,8 +50,9 @@ describe('Doctors page', () => {
 
     await expect(pages('doctors').addDoctorModal.rootEl).not.toBeDisplayed();
 
-    await expect($('#Specialist_8').$('.name').toHaveText('Dr. John Doe'));
-    await expect($('#Specialist_8').$('.education').toHaveText('Basic', { ignoreCase: true }));
+    pages('doctors').specialistCard(8).name;
+    await expect(pages('doctors').specialistCard(8).name.toHaveText('Dr. John Doe'));
+    await expect(pages('doctors').specialistCard(8).education.toHaveText('Basic', { ignoreCase: true }));
   });
 
   it('Closes the modal window', async () => {
