@@ -5,6 +5,14 @@ class AddDoctorComponent extends BaseComponent {
     super('.new-doctor-dialog');
   }
 
+  get saveBtn() {
+    return this.rootEl.$('.e-footer-content button.e-primary');
+  }
+
+  get closeBtn() {
+    return this.rootEl.$('.new-doctor-dialog .e-dlg-closeicon-btn');
+  }
+
   // create a common method, describe all fields in this method and then reuse this one method in the test
   // create a js document and describe all possible parameters
 

@@ -46,7 +46,7 @@ describe('Doctors page', () => {
     await pages('doctors').addDoctorModal.input('education').setValue('Basic');
     await pages('doctors').addDoctorModal.input('designation').setValue('Test');
 
-    await $('.e-footer-content button.e-primary').click();
+    await pages('doctors').addDoctorModal.saveBtn.click();
 
     await expect(pages('doctors').addDoctorModal.rootEl).not.toBeDisplayed();
 
@@ -61,7 +61,7 @@ describe('Doctors page', () => {
 
     await pages('doctors').addDoctorModal.rootEl.waitForDisplayed();
 
-    await $('.new-doctor-dialog .e-dlg-closeicon-btn').click();
+    await pages('doctors').addDoctorModal.closeBtn.click();
 
     await expect(pages('doctors').addDoctorModal.rootEl).not.toBeDisplayed();
   });
