@@ -40,11 +40,11 @@ describe('Doctors page', () => {
 
     await pages('doctors').addDoctorModal.rootEl.waitForDisplayed();
 
-    await $('[name="Name"]').setValue('John Doe');
-    await $('#DoctorMobile').setValue('1234567890');
-    await $('[name="Email"]').setValue('test@test.com');
-    await $('[name="Education"]').setValue('Basic');
-    await $('[name="Designation"]').setValue('Test');
+    await pages('doctors').addDoctorModal.input('name').setValue('John Doe');
+    await pages('doctors').addDoctorModal.input('phone').setValue('1234567890');
+    await pages('doctors').addDoctorModal.input('email').setValue('test@test.com');
+    await pages('doctors').addDoctorModal.input('education').setValue('Basic');
+    await pages('doctors').addDoctorModal.input('designation').setValue('Test');
 
     await $('.e-footer-content button.e-primary').click();
 
